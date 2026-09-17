@@ -1,0 +1,27 @@
+{
+  "id": "DecoderConfig",
+  "type": "object",
+  "properties": {
+    "input": {
+      "$comment": "Input describes the artifact being ingested.",
+      "type": "object",
+      "properties": {
+        "container": {
+          "$comment": "Container describes the framing or encapsulation around the artifact.",
+          "type": "object"
+        },
+        "decoder": {
+          "$comment": "Decoder describes the artifact itself.",
+          "type": "object",
+          "properties": {
+            "type": {
+              "$comment": "Type is the recognized type of the data.",
+              "type": "string",
+              "enum": ["json"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
