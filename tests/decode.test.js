@@ -1,6 +1,5 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert");
-const fs = require("node:fs");
 const decode = require("../src/decode.js");
 
 describe("Processes `decode` configurations correctly", () => {
@@ -27,7 +26,7 @@ describe("Decodes data correctly", () => {
         }
       }
     };
-    const dataRaw = fs.readFileSync("./tests/spec/decode.valid.simple.json", { encoding: "utf8" });
+    const dataRaw = JSON.stringify({ hello: "world" });
     const dataParsed = { hello: "world" };
 
     const processor = new decode.DecodeProcessor(config);
